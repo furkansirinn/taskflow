@@ -1,0 +1,263 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #172033;
+    line-height: 1.6;
+}
+
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+header .container {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #2563eb;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 24px;
+}
+
+nav a {
+    color: #475569;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+nav a:hover {
+    color: #2563eb;
+}
+
+/* Hero */
+.hero {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.eyebrow {
+    color: #2563eb;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    max-width: 750px;
+    margin: 0 auto 24px;
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    line-height: 1.1;
+}
+
+.hero-text {
+    max-width: 650px;
+    margin: 0 auto 32px;
+    color: #64748b;
+    font-size: 1.1rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 14px 24px;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.button:hover {
+    background: #1d4ed8;
+}
+
+/* Özellikler bölümünün genel boşluklarını belirliyoruz. */
+.features {
+    padding: 80px 0;
+    background: white;
+}
+
+/* Bölüm başlığını ortalıyoruz ve genişliğini sınırlıyoruz. */
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-bottom: 16px;
+    font-size: 2.2rem;
+}
+
+.section-heading p:last-child {
+    color: #64748b;
+}
+
+/* Özellik kartlarını yan yana yerleştiriyoruz. */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* Her özelliği ayrı bir kart olarak gösteriyoruz. */
+.feature-card {
+    padding: 28px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.feature-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.feature-card p {
+    color: #64748b;
+}
+
+/* Küçük ekranlarda kartları alt alta getiriyoruz. */
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+}
+
+/* Nasıl Çalışır bölümünün genel boşluklarını belirliyoruz. */
+.how-it-works {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+/* Adımları üç sütun halinde düzenliyoruz. */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* Her adımı ayrı bir alan olarak gösteriyoruz. */
+.step {
+    padding: 28px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+/* Adım numarasını görsel olarak öne çıkarıyoruz. */
+.step-number {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #2563eb;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.step h3 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.step p {
+    color: #64748b;
+}
+
+/* Küçük ekranlarda adımları alt alta getiriyoruz. */
+@media (max-width: 768px) {
+    .steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Talep formunun bulunduğu bölümü düzenliyoruz. */
+.request-section {
+    padding: 80px 0;
+    background: white;
+}
+
+/* Formun çok genişleyip dağılmasını önlüyoruz. */
+#request-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Her form alanı arasına boşluk bırakıyoruz. */
+.form-group {
+    margin-bottom: 24px;
+}
+
+/* Form alanlarının başlıklarını düzenliyoruz. */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Input, select ve textarea alanlarının ortak görünümü. */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    color: #172033;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+/* Kullanıcı bir alana tıkladığında hangi alanı düzenlediği
+   daha kolay belli olsun. */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* Açıklama alanının sadece dikey olarak büyümesine izin veriyoruz. */
+.form-group textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+/* Form butonunu biraz daha belirgin hale getiriyoruz. */
+#request-form .button {
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow | İşletmeler için görev otomasyonu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--
+        Header: Kullanıcının sayfada yönünü bulmasını ve ana bölümlere
+        hızlıca ulaşmasını sağlayan üst alan.
+    -->
+    <header>
+        <div class="container">
+            <a href="/" class="logo">TaskFlow</a>
+
+            <nav>
+                <a href="#ozellikler">Özellikler</a>
+                <a href="#nasil-calisir">Nasıl Çalışır?</a>
+                <a href="#talep">Talep Oluştur</a>
+            </nav>
+        </div>
+    </header>
+
+    <!--
+        Hero bölümü: Kullanıcı sayfaya geldiğinde hizmetin ne yaptığını
+        birkaç saniye içinde anlayabilmeli.
+    -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <p class="eyebrow">İşletmeler için görev otomasyonu</p>
+
+                <h1>İşletmenizdeki görev karmaşasını azaltın.</h1>
+
+                <p class="hero-text">
+                    Dağınık WhatsApp mesajlarını, Excel listelerini ve sözlü
+                    görevleri daha düzenli bir iş akışına dönüştürün.
+                </p>
+
+                <a href="#talep" class="button">
+                    Bilgi Talep Et
+                </a>
+            </div>
+        </section>
+
+        <!--
+            Özellikler bölümü: Hizmetin temel faydalarını kısa ve
+            anlaşılır şekilde göstermek için kullanıyoruz.
+        -->
+        <section id="ozellikler" class="features">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Neler sunuyoruz?</p>
+
+                    <h2>İşlerinizi daha düzenli hale getirin.</h2>
+
+                    <p>
+                        TaskFlow, işletmelerde dağınık ilerleyen görev ve
+                        taleplerin daha kolay takip edilmesine yardımcı olur.
+                    </p>
+                </div>
+
+                <div class="feature-grid">
+
+                    <article class="feature-card">
+                        <h3>Görevleri Düzenleyin</h3>
+
+                        <p>
+                            Farklı kanallardan gelen işleri tek bir akışta
+                            daha düzenli şekilde takip edin.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <h3>Talepleri Toplayın</h3>
+
+                        <p>
+                            İşletmeniz için gelen talepleri standart bir
+                            formatta toplayarak bilgi kaybını azaltın.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <h3>Süreçleri Görün</h3>
+
+                        <p>
+                            Hangi işlerin beklediğini ve hangi taleplerin
+                            üzerinde çalışıldığını daha kolay takip edin.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+                <!--
+            Nasıl Çalışır bölümü: Kullanıcıya hizmetin çalışma mantığını
+            üç basit adım üzerinden anlatıyoruz.
+        -->
+        <section id="nasil-calisir" class="how-it-works">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Nasıl Çalışır?</p>
+
+                    <h2>Talebinizi oluşturun, süreci takip edin.</h2>
+
+                    <p>
+                        TaskFlow ile işletmenizdeki iş taleplerini birkaç
+                        basit adımda daha düzenli hale getirebilirsiniz.
+                    </p>
+                </div>
+
+                <div class="steps">
+
+                    <article class="step">
+                        <span class="step-number">01</span>
+
+                        <h3>Talebinizi Oluşturun</h3>
+
+                        <p>
+                            Yapılmasını istediğiniz işi ve ihtiyaç duyduğunuz
+                            hizmeti form üzerinden bize iletin.
+                        </p>
+                    </article>
+
+                    <article class="step">
+                        <span class="step-number">02</span>
+
+                        <h3>Talebinizi İnceleyelim</h3>
+
+                        <p>
+                            İhtiyacınızı değerlendirerek işletmenize uygun
+                            çözüm ve iş akışını belirleyelim.
+                        </p>
+                    </article>
+
+                    <article class="step">
+                        <span class="step-number">03</span>
+
+                        <h3>Süreci Birlikte Yönetin</h3>
+
+                        <p>
+                            İşlerinizi daha düzenli takip edebileceğiniz
+                            otomasyon sürecini hayata geçirelim.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+                <!--
+            Talep formu: Kullanıcının işletmesi için ihtiyaç duyduğu
+            hizmeti bize iletebilmesini sağlıyoruz.
+        -->
+        <section id="talep" class="request-section">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Talep Oluştur</p>
+
+                    <h2>İhtiyacınızı bize anlatın.</h2>
+
+                    <p>
+                        Formu doldurun, işletmeniz için uygun çözümü
+                        birlikte değerlendirelim.
+                    </p>
+                </div>
+
+                <form id="request-form">
+
+                    <div class="form-group">
+                        <label for="name">Ad Soyad</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Adınızı ve soyadınızı girin"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-posta</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="ornek@email.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Hizmet</label>
+
+                        <select id="service" name="service" required>
+                            <option value="">Hizmet seçin</option>
+                            <option value="Görev Otomasyonu">
+                                Görev Otomasyonu
+                            </option>
+                            <option value="Raporlama ve Dashboard">
+                                Raporlama ve Dashboard
+                            </option>
+                            <option value="Stok Takip Otomasyonu">
+                                Stok Takip Otomasyonu
+                            </option>
+                            <option value="Diğer">
+                                Diğer
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Açıklama</label>
+
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="6"
+                            placeholder="İhtiyacınızı kısaca anlatın"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="button">
+                        Talep Gönder
+                    </button>
+
+                </form>
+            </div>
+        </section>
+
+    </main>
+<script src="script.js"></script>
+</body>
+</html>
