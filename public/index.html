@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -98,7 +99,7 @@
             </div>
         </section>
 
-                <!--
+        <!--
             Nasıl Çalışır bölümü: Kullanıcıya hizmetin çalışma mantığını
             üç basit adım üzerinden anlatıyoruz.
         -->
@@ -155,7 +156,7 @@
             </div>
         </section>
 
-                <!--
+        <!--
             Talep formu: Kullanıcının işletmesi için ihtiyaç duyduğu
             hizmeti bize iletebilmesini sağlıyoruz.
         -->
@@ -174,6 +175,10 @@
                 </div>
 
                 <form id="request-form">
+
+                    <!-- Backend'den gelen başarı/hata mesajını
+                         kullanıcıya göstermek için kullanıyoruz. -->
+                    <div   id="form-message" role="status" aria-live="polite"></div>
 
                     <div class="form-group">
                         <label for="name">Ad Soyad</label>
@@ -204,15 +209,19 @@
 
                         <select id="service" name="service" required>
                             <option value="">Hizmet seçin</option>
+
                             <option value="Görev Otomasyonu">
                                 Görev Otomasyonu
                             </option>
+
                             <option value="Raporlama ve Dashboard">
                                 Raporlama ve Dashboard
                             </option>
+
                             <option value="Stok Takip Otomasyonu">
                                 Stok Takip Otomasyonu
                             </option>
+
                             <option value="Diğer">
                                 Diğer
                             </option>
@@ -240,6 +249,8 @@
         </section>
 
     </main>
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
+

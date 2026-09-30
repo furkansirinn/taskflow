@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     font-family: Arial, sans-serif;
     background: #f8fafc;
@@ -13,13 +12,15 @@ body {
     line-height: 1.6;
 }
 
-
 .container {
     width: min(1100px, 90%);
     margin: 0 auto;
 }
 
-/* Header */
+/* =========================
+   Header
+   ========================= */
+
 header {
     background: white;
     border-bottom: 1px solid #e5e7eb;
@@ -54,7 +55,10 @@ nav a:hover {
     color: #2563eb;
 }
 
-/* Hero */
+/* =========================
+   Hero
+   ========================= */
+
 .hero {
     padding: 100px 0;
     text-align: center;
@@ -94,13 +98,10 @@ nav a:hover {
     background: #1d4ed8;
 }
 
-/* Özellikler bölümünün genel boşluklarını belirliyoruz. */
-.features {
-    padding: 80px 0;
-    background: white;
-}
+/* =========================
+   Ortak bölüm başlıkları
+   ========================= */
 
-/* Bölüm başlığını ortalıyoruz ve genişliğini sınırlıyoruz. */
 .section-heading {
     max-width: 700px;
     margin: 0 auto 48px;
@@ -116,14 +117,21 @@ nav a:hover {
     color: #64748b;
 }
 
-/* Özellik kartlarını yan yana yerleştiriyoruz. */
+/* =========================
+   Özellikler
+   ========================= */
+
+.features {
+    padding: 80px 0;
+    background: white;
+}
+
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 
-/* Her özelliği ayrı bir kart olarak gösteriyoruz. */
 .feature-card {
     padding: 28px;
     background: #f8fafc;
@@ -140,35 +148,21 @@ nav a:hover {
     color: #64748b;
 }
 
-/* Küçük ekranlarda kartları alt alta getiriyoruz. */
-@media (max-width: 768px) {
-    .feature-grid {
-        grid-template-columns: 1fr;
-    }
+/* =========================
+   Nasıl Çalışır?
+   ========================= */
 
-    nav {
-        gap: 12px;
-    }
-
-    nav a {
-        font-size: 0.85rem;
-    }
-}
-
-/* Nasıl Çalışır bölümünün genel boşluklarını belirliyoruz. */
 .how-it-works {
     padding: 80px 0;
     background: #f8fafc;
 }
 
-/* Adımları üç sütun halinde düzenliyoruz. */
 .steps {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 
-/* Her adımı ayrı bir alan olarak gösteriyoruz. */
 .step {
     padding: 28px;
     background: white;
@@ -176,7 +170,6 @@ nav a:hover {
     border-radius: 12px;
 }
 
-/* Adım numarasını görsel olarak öne çıkarıyoruz. */
 .step-number {
     display: inline-block;
     margin-bottom: 20px;
@@ -194,39 +187,30 @@ nav a:hover {
     color: #64748b;
 }
 
-/* Küçük ekranlarda adımları alt alta getiriyoruz. */
-@media (max-width: 768px) {
-    .steps {
-        grid-template-columns: 1fr;
-    }
-}
+/* =========================
+   Talep Formu
+   ========================= */
 
-
-/* Talep formunun bulunduğu bölümü düzenliyoruz. */
 .request-section {
     padding: 80px 0;
     background: white;
 }
 
-/* Formun çok genişleyip dağılmasını önlüyoruz. */
 #request-form {
     max-width: 700px;
     margin: 0 auto;
 }
 
-/* Her form alanı arasına boşluk bırakıyoruz. */
 .form-group {
     margin-bottom: 24px;
 }
 
-/* Form alanlarının başlıklarını düzenliyoruz. */
 .form-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
 }
 
-/* Input, select ve textarea alanlarının ortak görünümü. */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -240,8 +224,6 @@ nav a:hover {
     font-size: 1rem;
 }
 
-/* Kullanıcı bir alana tıkladığında hangi alanı düzenlediği
-   daha kolay belli olsun. */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -249,15 +231,68 @@ nav a:hover {
     border-color: #2563eb;
 }
 
-/* Açıklama alanının sadece dikey olarak büyümesine izin veriyoruz. */
 .form-group textarea {
     resize: vertical;
     min-height: 140px;
 }
 
-/* Form butonunu biraz daha belirgin hale getiriyoruz. */
 #request-form .button {
     border: none;
     cursor: pointer;
     font-size: 1rem;
 }
+
+#form-message {
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    display: none;
+}
+
+/* =========================
+   Mobil
+   ========================= */
+
+@media (max-width: 768px) {
+
+    /* Header'ı mobilde iki satıra alıyoruz. */
+    header .container {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 0;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 16px;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 90px 0 150px;
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    /* Özellik kartları */
+    .features {
+        padding: 60px 0;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Nasıl çalışır adımları */
+    .steps {
+        grid-template-columns: 1fr;
+    }
+}
+
