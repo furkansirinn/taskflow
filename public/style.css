@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 
 * {
     margin: 0;
@@ -7,8 +10,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f8fafc;
-    color: #172033;
+    background: #f5f8ff;
+    color: #0f1f3d;
     line-height: 1.6;
 }
 
@@ -17,13 +20,11 @@ body {
     margin: 0 auto;
 }
 
-/* =========================
-   Header
-   ========================= */
+/* Üst menü */
 
 header {
-    background: white;
-    border-bottom: 1px solid #e5e7eb;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid #dbe5f5;
 }
 
 header .container {
@@ -31,48 +32,109 @@ header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.logo {
-    color: #2563eb;
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-decoration: none;
+    padding: 0 8px;
 }
 
 nav {
     display: flex;
-    gap: 24px;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+
+    color: #102a5c;
+    text-decoration: none;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: -0.055em;
+
+    transition: transform 0.2s ease;
+}
+
+.logo strong {
+    color: #2563eb;
+    font-weight: 800;
+}
+
+.logo:hover {
+    transform: translateY(-1px);
 }
 
 nav a {
-    color: #475569;
+    position: relative;
+
+    padding: 8px 2px;
+
+    color: #52627a;
     text-decoration: none;
+
     font-size: 0.95rem;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+/* Linkin altında mouse gelince küçük bir çizgi oluşuyor */
+nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 10px;
+    background: linear-gradient(90deg, #2563eb, #38bdf8);
+
+    transition: width 0.25s ease;
 }
 
 nav a:hover {
     color: #2563eb;
 }
 
-/* =========================
-   Hero
-   ========================= */
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Ana giriş bölümü */
 
 .hero {
     padding: 100px 0;
     text-align: center;
+    background:
+        radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.16), transparent 35%),
+        #f5f8ff;
 }
 
 .eyebrow {
-    color: #2563eb;
-    font-weight: 600;
+    display: inline-block;
+
     margin-bottom: 16px;
+
+    color: #2563eb;
+
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .hero h1 {
     max-width: 750px;
     margin: 0 auto 24px;
+    color: #0b1736;
     font-size: clamp(2.3rem, 5vw, 4rem);
     line-height: 1.1;
 }
@@ -80,7 +142,7 @@ nav a:hover {
 .hero-text {
     max-width: 650px;
     margin: 0 auto 32px;
-    color: #64748b;
+    color: #5d6b82;
     font-size: 1.1rem;
 }
 
@@ -92,15 +154,14 @@ nav a:hover {
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
 }
 
 .button:hover {
     background: #1d4ed8;
 }
 
-/* =========================
-   Ortak bölüm başlıkları
-   ========================= */
+/* Bölüm başlıkları */
 
 .section-heading {
     max-width: 700px;
@@ -109,17 +170,20 @@ nav a:hover {
 }
 
 .section-heading h2 {
-    margin-bottom: 16px;
-    font-size: 2.2rem;
+    margin-bottom: 18px;
+
+    color: #0b1736;
+
+    font-size: clamp(2.3rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
 }
 
 .section-heading p:last-child {
     color: #64748b;
 }
 
-/* =========================
-   Özellikler
-   ========================= */
+/* Özellikler */
 
 .features {
     padding: 80px 0;
@@ -133,14 +197,43 @@ nav a:hover {
 }
 
 .feature-card {
-    padding: 28px;
-    background: #f8fafc;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
+    position: relative;
+    padding: 32px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #dbe5f5;
+    border-radius: 16px;
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.feature-card::before {
+    content: "";
+    display: block;
+
+    width: 38px;
+    height: 4px;
+    margin-bottom: 28px;
+
+    border-radius: 10px;
+    background: linear-gradient(90deg, #2563eb, #38bdf8);
+}
+
+.feature-card:hover {
+    transform: translateY(-7px);
+    border-color: #b9d5f5;
+
+    box-shadow:
+        0 18px 40px rgba(30, 64, 175, 0.10),
+        0 0 30px rgba(56, 189, 248, 0.08);
 }
 
 .feature-card h3 {
     margin-bottom: 12px;
+    color: #102a5c;
     font-size: 1.2rem;
 }
 
@@ -148,13 +241,11 @@ nav a:hover {
     color: #64748b;
 }
 
-/* =========================
-   Nasıl Çalışır?
-   ========================= */
+/* Nasıl çalışıyor */
 
 .how-it-works {
     padding: 80px 0;
-    background: #f8fafc;
+    background: #f5f8ff;
 }
 
 .steps {
@@ -164,22 +255,50 @@ nav a:hover {
 }
 
 .step {
-    padding: 28px;
+    position: relative;
+    padding: 32px;
     background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
+    border: 1px solid #dbe5f5;
+    border-radius: 16px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.step:hover {
+    transform: translateY(-6px);
+    border-color: #b9d5f5;
+
+    box-shadow:
+        0 18px 40px rgba(30, 64, 175, 0.08),
+        0 0 30px rgba(56, 189, 248, 0.06);
 }
 
 .step-number {
-    display: inline-block;
-    margin-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+    margin-bottom: 22px;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
     color: #2563eb;
-    font-size: 0.9rem;
+
+    font-size: 0.85rem;
     font-weight: 700;
+
+    border: 1px solid #dbeafe;
 }
 
 .step h3 {
     margin-bottom: 12px;
+    color: #102a5c;
     font-size: 1.2rem;
 }
 
@@ -187,9 +306,7 @@ nav a:hover {
     color: #64748b;
 }
 
-/* =========================
-   Talep Formu
-   ========================= */
+/* Talep formu */
 
 .request-section {
     padding: 80px 0;
@@ -208,6 +325,7 @@ nav a:hover {
 .form-group label {
     display: block;
     margin-bottom: 8px;
+    color: #1e2f4d;
     font-weight: 600;
 }
 
@@ -216,7 +334,7 @@ nav a:hover {
 .form-group textarea {
     width: 100%;
     padding: 14px 16px;
-    border: 1px solid #cbd5e1;
+    border: 1px solid #cbd8eb;
     border-radius: 8px;
     background: white;
     color: #172033;
@@ -228,7 +346,8 @@ nav a:hover {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #2563eb;
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
 }
 
 .form-group textarea {
@@ -243,19 +362,35 @@ nav a:hover {
 }
 
 #form-message {
-    margin-bottom: 20px;
-    padding: 12px 16px;
-    border-radius: 8px;
+    margin-bottom: 24px;
+    padding: 14px 18px;
+
+    border-radius: 10px;
+    border: 1px solid transparent;
+
     display: none;
+
+    font-size: 0.95rem;
+    font-weight: 500;
 }
 
-/* =========================
-   Mobil
-   ========================= */
+#form-message.success {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #166534;
+}
+
+#form-message.error {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #b91c1c;
+}
+
+/* Küçük ekran */
 
 @media (max-width: 768px) {
 
-    /* Header'ı mobilde iki satıra alıyoruz. */
+    /* Menü mobilde alta geçsin */
     header .container {
         flex-direction: column;
         gap: 12px;
@@ -272,7 +407,7 @@ nav a:hover {
         font-size: 0.85rem;
     }
 
-    /* Hero */
+    /* Ana alan */
     .hero {
         padding: 90px 0 150px;
     }
@@ -281,7 +416,7 @@ nav a:hover {
         font-size: 2.1rem;
     }
 
-    /* Özellik kartları */
+    /* Kartlar */
     .features {
         padding: 60px 0;
     }
@@ -290,9 +425,393 @@ nav a:hover {
         grid-template-columns: 1fr;
     }
 
-    /* Nasıl çalışır adımları */
+    /* Adımlar */
     .steps {
         grid-template-columns: 1fr;
     }
+
+    
 }
 
+/* Hero'yu biraz daha canlı hale getiriyorum */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 760px;
+    padding: 110px 0 80px;
+    text-align: center;
+
+    background:
+        linear-gradient(rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 99, 235, 0.035) 1px, transparent 1px),
+        #f5f8ff;
+
+    background-size: 50px 50px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Arka plandaki hafif ışıklar */
+
+.hero-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+}
+
+.hero-glow-one {
+    top: -250px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(56, 189, 248, 0.18);
+}
+
+.hero-glow-two {
+    right: -250px;
+    bottom: -250px;
+    background: rgba(37, 99, 235, 0.10);
+}
+
+/* Üstteki küçük etiket */
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 26px;
+    padding: 8px 14px;
+
+    border: 1px solid #cbdcf5;
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.75);
+    color: #31558f;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.hero-badge span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #38bdf8;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+}
+
+/* Ana başlık */
+
+.hero h1 {
+    max-width: 850px;
+    margin: 0 auto 26px;
+
+    color: #0b1736;
+    font-size: clamp(3rem, 7vw, 5.4rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+}
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+/* Açıklama */
+
+.hero-text {
+    max-width: 650px;
+    margin: 0 auto 34px;
+
+    color: #5d6b82;
+    font-size: 1.12rem;
+}
+
+/* Butonların olduğu alan */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.hero-actions .button {
+    transition: 0.25s ease;
+}
+
+.hero-actions .button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 12px 30px rgba(37, 99, 235, 0.25),
+        0 0 25px rgba(56, 189, 248, 0.15);
+}
+
+.hero-link {
+    color: #52627a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hero-link span {
+    margin-left: 5px;
+    color: #2563eb;
+}
+
+/* Sahte dashboard görüntüsü */
+
+.hero-preview {
+    max-width: 900px;
+    height: 330px;
+    margin: 75px auto 0;
+
+    overflow: hidden;
+
+    border: 1px solid #cbdcf5;
+    border-radius: 16px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    box-shadow:
+        0 25px 70px rgba(30, 64, 175, 0.12),
+        0 0 50px rgba(56, 189, 248, 0.08);
+
+    text-align: left;
+}
+
+.preview-header {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 0 18px;
+
+    border-bottom: 1px solid #e3eaf5;
+
+    color: #64748b;
+    font-size: 0.8rem;
+}
+
+.preview-dots {
+    display: flex;
+    gap: 5px;
+}
+
+.preview-dots span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #cbd5e1;
+}
+
+.preview-content {
+    display: flex;
+    height: calc(100% - 48px);
+}
+
+.preview-sidebar {
+    width: 150px;
+    padding: 25px 18px;
+
+    border-right: 1px solid #e3eaf5;
+}
+
+.sidebar-line {
+    height: 9px;
+    width: 100%;
+    margin-bottom: 17px;
+
+    border-radius: 5px;
+    background: #e5edf8;
+}
+
+.sidebar-line.active {
+    background: #93c5fd;
+}
+
+.sidebar-line.short {
+    width: 65%;
+}
+
+.preview-main {
+    flex: 1;
+    padding: 25px;
+}
+
+.preview-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.fake-title {
+    width: 150px;
+    height: 14px;
+    border-radius: 5px;
+    background: #cbd8eb;
+}
+
+.fake-button {
+    width: 90px;
+    height: 28px;
+    border-radius: 6px;
+    background: #2563eb;
+    opacity: 0.85;
+}
+
+.preview-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.fake-card {
+    height: 70px;
+    border: 1px solid #e2eaf5;
+    border-radius: 9px;
+    background: #f8fbff;
+}
+
+.fake-chart {
+    position: relative;
+    height: 100px;
+    margin-top: 18px;
+
+    overflow: hidden;
+
+    border: 1px solid #e2eaf5;
+    border-radius: 9px;
+    background: #f8fbff;
+}
+
+.chart-line {
+    position: absolute;
+    left: 8%;
+    bottom: 20px;
+
+    width: 80%;
+    height: 45px;
+
+    border-top: 3px solid #38bdf8;
+
+    transform: skewY(-7deg);
+    opacity: 0.7;
+}
+
+
+/* Mobil */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: auto;
+        padding: 80px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hero-preview {
+        height: 260px;
+        margin-top: 55px;
+    }
+
+    .preview-sidebar {
+        width: 90px;
+    }
+
+    .preview-main {
+        padding: 16px;
+    }
+
+    .fake-card {
+        height: 55px;
+    }
+
+    .steps::before {
+    display: none;
+    }
+}
+
+
+.hero-preview {
+    animation: dashboardFloat 4s ease-in-out infinite;
+}
+
+@keyframes dashboardFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.hero-glow-one {
+    animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove {
+    from {
+        transform: translateX(-50%) scale(1);
+    }
+
+    to {
+        transform: translateX(-50%) scale(1.12);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-preview,
+    .hero-glow-one {
+        animation: none;
+    }
+}
+
+
+.steps {
+    position: relative;
+}
+
+/* Üç adımı birbirine bağlayan ince çizgi */
+.steps::before {
+    content: "";
+
+    position: absolute;
+    top: 53px;
+    left: 16%;
+    right: 16%;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #bfdbfe,
+        #38bdf8,
+        #bfdbfe,
+        transparent
+    );
+
+    z-index: 0;
+}
+
+.step {
+    position: relative;
+    z-index: 1;
+}

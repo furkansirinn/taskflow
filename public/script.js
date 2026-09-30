@@ -16,6 +16,7 @@ requestForm.addEventListener("submit", async (event) => {
 
     // Önceki mesajı temizliyoruz.
     formMessage.textContent = "";
+    formMessage.className = "";
     formMessage.style.display = "none";
 
     // İstek gönderilirken kullanıcıya işlemin devam ettiğini gösteriyoruz.
@@ -52,15 +53,15 @@ requestForm.addEventListener("submit", async (event) => {
         // Backend hata döndürdüyse kullanıcıya hata mesajını gösteriyoruz.
         if (!response.ok) {
             formMessage.textContent = result.message;
+            formMessage.className = "error";
             formMessage.style.display = "block";
             return;
-        }
+}
 
-        // Backend başarılı cevap verdiyse başarı mesajını gösteriyoruz.
         formMessage.textContent = result.message;
+        formMessage.className = "success";
         formMessage.style.display = "block";
 
-        // Başarılı gönderimden sonra formu temizliyoruz.
         requestForm.reset();
 
     } catch (error) {
@@ -69,6 +70,7 @@ requestForm.addEventListener("submit", async (event) => {
         formMessage.textContent =
             "Bir bağlantı hatası oluştu. Lütfen tekrar deneyin.";
 
+        formMessage.className = "error";
         formMessage.style.display = "block";
 
         console.error("İstek hatası:", error);
